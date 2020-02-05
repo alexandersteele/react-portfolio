@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-function useGitConnected (url) {
+const useGitConnected = () => {
     const [gitConnected, setGitConnected] = useState('');
     const [isLoading, setIsloading] = useState(true);
   
     useEffect(() => {
-      async function fetchData() {
-          await fetch(url)
+      const fetchData = async () => {
+          await fetch(process.env.REACT_APP_CONNECTED_URL)
           .then(res => res.json())
           .then(data => setGitConnected(data))
           .catch(err => console.error(err))
@@ -14,7 +14,7 @@ function useGitConnected (url) {
       }
   
     fetchData();
-    }, [url])
+    }, [])
   
     return [gitConnected, isLoading];
 }

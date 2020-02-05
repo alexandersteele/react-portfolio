@@ -1,28 +1,17 @@
 import React from 'react';
 import {useGitConnected} from './GitConnected'
-
+import {DrawerNav} from './DrawerNav';
 
 const App = () => {
+    const [gitConnected, isLoading] = useGitConnected();
 
-  const URL = 'https://gitconnected.com/v1/portfolio/alexandersteele'
-  
-  const [gitConnected, isLoading] = useGitConnected(URL);
+    !isLoading && console.log(gitConnected.basics.name);
 
-  if (!isLoading) {
-    console.log(gitConnected.basics.name);
-  }
-  
-  
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello world
-        </p>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <DrawerNav gitConnected={gitConnected} isLoading={isLoading}/>
+        </div>
+    );
 }
 
 export default App;
