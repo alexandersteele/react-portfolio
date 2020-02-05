@@ -5,13 +5,17 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import SchoolIcon from '@material-ui/icons/School';
+import ComputerIcon from '@material-ui/icons/Computer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+import PersonIcon from '@material-ui/icons/Person';
 import MenuIcon from '@material-ui/icons/Menu';
+import FolderIcon from '@material-ui/icons/Folder';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import WorkIcon from '@material-ui/icons/Work'
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import useDrawerStyles from './useDrawerStyles';
@@ -28,23 +32,35 @@ function DrawerNav(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleItemClick = () => {
+      console.log("efs");
+  }
+
   const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+        {['About', 'Skills', 'Projects'].map((text, index) => (
+          <ListItem button key={text} onClick={handleItemClick}>
+            <ListItemIcon>
+                {index === 0 && <PersonIcon />}
+                {index === 1 && <ComputerIcon />}
+                {index === 2 && <FolderIcon />}
+            </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['Experience', 'Education', 'Awards'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon>
+                {index === 0 && <WorkIcon />}
+                {index === 1 && <SchoolIcon />}
+                {index === 2 && <ThumbUpIcon />}
+            </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -86,9 +102,7 @@ function DrawerNav(props) {
             classes={{
               paper: classes.drawerPaper,
             }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
+            ModalProps={{keepMounted: true,}}
           >
             {drawer}
           </Drawer>
