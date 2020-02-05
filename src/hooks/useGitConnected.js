@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useGitConnected = () => {
+const useGitConnected = () => {
     const [gitConnected, setGitConnected] = useState('');
     const [isLoading, setIsloading] = useState(true);
   
@@ -19,3 +19,5 @@ export const useGitConnected = () => {
   
     return [gitConnected, isLoading];
 }
+
+export default useGitConnected;
