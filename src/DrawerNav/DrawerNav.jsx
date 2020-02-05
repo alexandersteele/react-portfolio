@@ -41,12 +41,11 @@ function DrawerNav(props) {
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {['About', 'Skills', 'Projects'].map((text, index) => (
+        {['About','Projects'].map((text, index) => (
           <ListItem button key={text} onClick={handleItemClick}>
             <ListItemIcon>
                 {index === 0 && <PersonIcon />}
-                {index === 1 && <ComputerIcon />}
-                {index === 2 && <FolderIcon />}
+                {index === 1 && <FolderIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -67,8 +66,6 @@ function DrawerNav(props) {
       </List>
     </div>
   );
-
-  console.log(props.isLoading)
 
   return (
     <div className={classes.root}>
@@ -121,8 +118,7 @@ function DrawerNav(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {props.isLoading ? <p>Loading...</p> :
-        props.contentComponent}
+            {props.contentComponent }
       </main>
     </div>
   );

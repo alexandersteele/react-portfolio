@@ -2,7 +2,7 @@ import React from 'react';
 import {useGitConnected} from './hooks'
 import {DrawerNav} from './DrawerNav';
 import {About} from './About';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 
 
@@ -16,16 +16,12 @@ const App = () => {
             <div className="App">
             <Route exact path="/">
                 <DrawerNav 
-                        gitConnected={gitConnected} 
-                        isLoading={isLoading}
-                        contentComponent={<About />} 
-                />
-            </Route>
-            <Route exact path="/skills">
-                <DrawerNav 
-                        gitConnected={gitConnected} 
-                        isLoading={isLoading}
-                        contentComponent={<div>skills</div>} 
+                    contentComponent={
+                        <About 
+                            gitConnected={gitConnected}
+                            isLoading={isLoading}
+                        />
+                    } 
                 />
             </Route>
             <Route exact path="/projects">
