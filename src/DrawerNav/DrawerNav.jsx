@@ -122,7 +122,7 @@ function DrawerNav(props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {props.isLoading ? <p>Loading...</p> :
-        <p>hellow</p>}
+        props.contentComponent}
       </main>
     </div>
   );
