@@ -69,7 +69,7 @@ function DrawerNav(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            Alexander Steele
           </Typography>
         </Toolbar>
       </AppBar>

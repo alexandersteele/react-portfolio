@@ -1,5 +1,5 @@
 import React from 'react';
-import {useGitConnected} from './GitConnected'
+import {useGitConnected} from './hooks/useGitConnected'
 import {DrawerNav} from './DrawerNav';
 
 const App = () => {
