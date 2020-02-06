@@ -7,9 +7,9 @@ const Projects = ({isLoading, gitConnected}) => {
     const renderGitConnected = ({projects}) => {
         return (
             <div>
-                { projects.map(({name, summary, githubUrl}) => {
+                { projects.map(({name, summary, githubUrl}, key) => {
                     return (
-                        <div>
+                        <div key={key}>
                             <b>{name}</b>
                             <p>{summary}</p>
                             <p>{'GitHub URL: '}<a href={githubUrl}>{githubUrl}</a></p>
@@ -22,7 +22,6 @@ const Projects = ({isLoading, gitConnected}) => {
         
     }
 
-    console.log(gitConnected)
     return (
         <div>
             {isLoading ? <LoadingSpinner /> :

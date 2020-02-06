@@ -15,9 +15,9 @@ const About = ({isLoading, gitConnected}) => {
                 <p><b>LinkedIn:</b> {basics.profiles[2].url}</p>
                 <p><b>Skills:</b></p> 
                 {
-                    skills.map(({name, level, yearsOfExperience}) => {
+                    skills.map(({name, level, yearsOfExperience}, key) => {
                     return (
-                        <p>
+                        <p key={key}>
                             <b>{`${name}: `}</b>
                             {`${level}, ${yearsOfExperience} years`}</p>
                     );
@@ -28,7 +28,6 @@ const About = ({isLoading, gitConnected}) => {
         
     }
 
-    console.log(gitConnected)
     return (
         <div>
             {isLoading ? <LoadingSpinner /> :

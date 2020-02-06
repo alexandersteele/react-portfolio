@@ -19,7 +19,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import useDrawerStyles from './useDrawerStyles';
 import {useTheme} from '@material-ui/core/styles';
-import {browserHistory, useHistory} from 'react-router';
+import { useHistory } from 'react-router';
 
 
 function DrawerNav(props) {
@@ -28,7 +28,6 @@ function DrawerNav(props) {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let history = useHistory();
-  const [selectedNav, setSelectedNav] = React.useState('');
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -53,10 +52,14 @@ function DrawerNav(props) {
       <List>
         {['About','Projects'].map((text, index) => (
             
-          <ListItem button key={text}  onClick={() => handleItemClick(text)} selected={handleItemActive(text)}>
+          <ListItem button key={text}  onClick={() => handleItemClick(text)}
+            selected={handleItemActive(text)}>
             <ListItemIcon>
-                {index === 0 && <PersonIcon />}
-                {index === 1 && <FolderIcon />}
+                <div>
+                    {index === 0 && <PersonIcon />}
+                    {index === 1 && <FolderIcon />}
+                </div>
+                
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -67,9 +70,12 @@ function DrawerNav(props) {
         {['Experience', 'Education', 'Awards'].map((text, index) => (
           <ListItem button key={text} onClick={() => handleItemClick(text)}>
             <ListItemIcon>
-                {index === 0 && <WorkIcon />}
-                {index === 1 && <SchoolIcon />}
-                {index === 2 && <ThumbUpIcon />}
+                <div>
+                    {index === 0 && <WorkIcon />}
+                    {index === 1 && <SchoolIcon />}
+                    {index === 2 && <ThumbUpIcon />}
+                </div>
+                
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>

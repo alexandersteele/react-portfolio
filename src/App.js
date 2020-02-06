@@ -10,8 +10,6 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 const App = () => {
     const [gitConnected, isLoading] = useGitConnected();
 
-    !isLoading && console.log(gitConnected.basics.name);
-
     return (
         <Router>
             <div className="App">
