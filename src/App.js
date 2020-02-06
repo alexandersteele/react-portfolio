@@ -4,6 +4,8 @@ import {DrawerNav} from './DrawerNav';
 import {About} from './About';
 import {Projects} from './Projects';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Experience } from './Experience';
+import {Education} from './Education';
 
 
 
@@ -29,6 +31,30 @@ const App = () => {
                         isLoading={isLoading}
                         contentComponent={
                             <Projects 
+                                gitConnected={gitConnected}
+                                isLoading={isLoading}
+                            />
+                        } 
+                />
+            </Route>
+            <Route exact path="/experience">
+                <DrawerNav 
+                        gitConnected={gitConnected} 
+                        isLoading={isLoading}
+                        contentComponent={
+                            <Experience 
+                                gitConnected={gitConnected}
+                                isLoading={isLoading}
+                            />
+                        } 
+                />
+            </Route>
+            <Route exact path="/education">
+                <DrawerNav 
+                        gitConnected={gitConnected} 
+                        isLoading={isLoading}
+                        contentComponent={
+                            <Education 
                                 gitConnected={gitConnected}
                                 isLoading={isLoading}
                             />

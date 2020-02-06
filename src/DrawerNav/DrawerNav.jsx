@@ -59,7 +59,6 @@ function DrawerNav(props) {
                     {index === 0 && <PersonIcon />}
                     {index === 1 && <FolderIcon />}
                 </div>
-                
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -74,8 +73,7 @@ function DrawerNav(props) {
                     {index === 0 && <WorkIcon />}
                     {index === 1 && <SchoolIcon />}
                     {index === 2 && <ThumbUpIcon />}
-                </div>
-                
+                </div>  
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
