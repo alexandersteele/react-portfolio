@@ -4,8 +4,6 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Awards = ({isLoading, gitConnected}) => {
 
-    console.log(gitConnected)
-
     const renderGitConnected = ({awards}) => {
         return (
             <div>

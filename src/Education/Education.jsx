@@ -4,8 +4,6 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Education = ({isLoading, gitConnected}) => {
 
-    console.log(gitConnected)
-
     const renderGitConnected = ({education}) => {
         return (
             <div>
