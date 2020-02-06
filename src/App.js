@@ -6,6 +6,7 @@ import {Projects} from './Projects';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import { Experience } from './Experience';
 import {Education} from './Education';
+import { Awards } from './Awards';
 
 
 
@@ -15,55 +16,69 @@ const App = () => {
     return (
         <Router>
             <div className="App">
-            <Route exact path="/">
-                <DrawerNav 
-                    contentComponent={
-                        <About 
-                            gitConnected={gitConnected}
+                <Route exact path="/">
+                    <DrawerNav 
+                        contentComponent={
+                            <About 
+                                gitConnected={gitConnected}
+                                isLoading={isLoading}
+                            />
+                        } 
+                    />
+                </Route>
+                <Route exact path="/projects">
+                    <DrawerNav 
+                            gitConnected={gitConnected} 
                             isLoading={isLoading}
-                        />
-                    } 
-                />
-            </Route>
-            <Route exact path="/projects">
-                <DrawerNav 
+                            contentComponent={
+                                <Projects 
+                                    gitConnected={gitConnected}
+                                    isLoading={isLoading}
+                                />
+                            } 
+                    />
+                </Route>
+                <Route exact path="/experience">
+                    <DrawerNav 
+                            gitConnected={gitConnected} 
+                            isLoading={isLoading}
+                            contentComponent={
+                                <Experience 
+                                    gitConnected={gitConnected}
+                                    isLoading={isLoading}
+                                />
+                            } 
+                    />
+                </Route>
+                <Route exact path="/education">
+                    <DrawerNav 
+                            gitConnected={gitConnected} 
+                            isLoading={isLoading}
+                            contentComponent={
+                                <Education 
+                                    gitConnected={gitConnected}
+                                    isLoading={isLoading}
+                                />
+                            } 
+                    />
+                </Route>
+                <Route exact path="/awards">
+                    <DrawerNav 
                         gitConnected={gitConnected} 
                         isLoading={isLoading}
                         contentComponent={
-                            <Projects 
+                            <Awards 
                                 gitConnected={gitConnected}
                                 isLoading={isLoading}
                             />
                         } 
-                />
-            </Route>
-            <Route exact path="/experience">
-                <DrawerNav 
-                        gitConnected={gitConnected} 
-                        isLoading={isLoading}
-                        contentComponent={
-                            <Experience 
-                                gitConnected={gitConnected}
-                                isLoading={isLoading}
-                            />
-                        } 
-                />
-            </Route>
-            <Route exact path="/education">
-                <DrawerNav 
-                        gitConnected={gitConnected} 
-                        isLoading={isLoading}
-                        contentComponent={
-                            <Education 
-                                gitConnected={gitConnected}
-                                isLoading={isLoading}
-                            />
-                        } 
-                />
-            </Route>
+                    />
+                </Route>
                 
             </div>
         </Router>
+        
+        
     );
 }
 
