@@ -19,6 +19,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import useDrawerStyles from './useDrawerStyles';
 import {useTheme} from '@material-ui/core/styles';
+import {browserHistory, useHistory} from 'react-router';
 
 
 function DrawerNav(props) {
@@ -26,13 +27,15 @@ function DrawerNav(props) {
   const classes = useDrawerStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  let history = useHistory();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleItemClick = () => {
-      console.log("efs");
+  const handleItemClick = (text) => {
+      text === 'About' ? history.push('/') :
+      history.push('/' + text)
   }
 
   const drawer = (
@@ -41,7 +44,8 @@ function DrawerNav(props) {
       <Divider />
       <List>
         {['About','Projects'].map((text, index) => (
-          <ListItem button key={text} onClick={handleItemClick}>
+            
+          <ListItem button key={text} onClick={() => handleItemClick(text)}>
             <ListItemIcon>
                 {index === 0 && <PersonIcon />}
                 {index === 1 && <FolderIcon />}
@@ -53,7 +57,7 @@ function DrawerNav(props) {
       <Divider />
       <List>
         {['Experience', 'Education', 'Awards'].map((text, index) => (
-          <ListItem button key={text}>
+          <ListItem button key={text} onClick={() => handleItemClick(text)}>
             <ListItemIcon>
                 {index === 0 && <WorkIcon />}
                 {index === 1 && <SchoolIcon />}

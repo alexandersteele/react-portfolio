@@ -2,7 +2,6 @@ import React from 'react';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 
-
 const About = ({isLoading, gitConnected}) => {
 
     const renderGitConnected = ({basics, skills}) => {
