@@ -11,7 +11,6 @@ const Projects = ({isLoading, gitConnected}) => {
     const classes = useProjectsStyles();
 
     const renderGitConnected = ({projects}) => (
-
         <div>
             { projects.map(({name, summary, githubUrl}, key) => (
                 <div key={key}>
@@ -29,12 +28,6 @@ const Projects = ({isLoading, gitConnected}) => {
             ))}
         </div>
     )
-
-    return (
-        <div>
-            {isLoading ? <LoadingSpinner /> :
-                renderGitConnected(gitConnected)}
-        </div>
-    );
+    return isLoading ? <LoadingSpinner /> : renderGitConnected(gitConnected);
 };
 export default Projects;

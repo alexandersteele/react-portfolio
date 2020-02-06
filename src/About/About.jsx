@@ -21,7 +21,7 @@ const About = ({isLoading, gitConnected}) => {
                 </div>
                 
                 <h2>Profiles</h2>
-                <a href={basics.website}>Website</a> | <a href={basics.profiles[1].url}>GitHub</a> | <a href={basics.profiles[2].url}>LinkedIn</a>   
+                <a href={basics.website}>Website</a> | <a href={basics.profiles[1].url}>GitHub</a> | <a href={basics.profiles[2].url}>Twitter</a> | <a href={basics.profiles[3].url}>LinkedIn</a>   
             </div>
         );
         
