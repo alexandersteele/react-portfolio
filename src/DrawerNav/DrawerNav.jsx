@@ -28,14 +28,22 @@ function DrawerNav(props) {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let history = useHistory();
+  const [selectedNav, setSelectedNav] = React.useState('');
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   const handleItemClick = (text) => {
-      text === 'About' ? history.push('/') :
-      history.push('/' + text)
+    text === 'About' ? history.push('/') : history.push('/' + text)
+  }
+
+  const handleItemActive = (text) => {   
+    if (text === 'About') {
+        return `/` === history.location.pathname;
+    } else {
+        return `/${text}` === history.location.pathname;
+    }
   }
 
   const drawer = (
@@ -45,7 +53,7 @@ function DrawerNav(props) {
       <List>
         {['About','Projects'].map((text, index) => (
             
-          <ListItem button key={text} onClick={() => handleItemClick(text)}>
+          <ListItem button key={text}  onClick={() => handleItemClick(text)} selected={handleItemActive(text)}>
             <ListItemIcon>
                 {index === 0 && <PersonIcon />}
                 {index === 1 && <FolderIcon />}
