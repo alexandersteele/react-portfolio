@@ -2,7 +2,6 @@ import React from 'react';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import Chip from '@material-ui/core/Chip';
 import useAboutStyles from './useAboutStyles';
-import Image from 'material-ui-image'
 
 const About = ({isLoading, gitConnected}) => {
     const classes = useAboutStyles();
