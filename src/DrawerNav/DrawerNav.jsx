@@ -10,17 +10,56 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import useDrawerStyles from './useDrawerStyles';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function DrawerNav(props) {
   const { container } = props;
+
+  const drawerWidth = 240;
+
+  const useDrawerStyles = makeStyles(theme => ({
+    root: {
+      display: 'flex',
+    },
+    drawer: {
+      [theme.breakpoints.up('sm')]: {
+        width: drawerWidth,
+        flexShrink: 0,
+      },
+    },
+    appBar: {
+      [theme.breakpoints.up('sm')]: {
+        width: `calc(100% - ${drawerWidth}px)`,
+        marginLeft: drawerWidth,
+      },
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.up('sm')]: {
+        display: 'none',
+      },
+    },
+    toolbar: theme.mixins.toolbar,
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    content: {
+      flexGrow: 1,
+      padding: theme.spacing(3),
+    },
+  }));
+
   const classes = useDrawerStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
-  const DrawerAppBar = () => (
+  
+
+  const DrawerAppBar = () => {
+      console.log(classes)
+    return (
     <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
             <IconButton
@@ -37,7 +76,7 @@ function DrawerNav(props) {
             </Typography>
         </Toolbar>
     </AppBar>
-  )
+  )}
 
     const MobileDrawer = () => (
         <Hidden smUp implementation="css">

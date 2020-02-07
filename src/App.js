@@ -9,21 +9,22 @@ import {Education} from './Education';
 import { Awards } from './Awards';
 
 
-
 const App = () => {
     const [gitConnected, isLoading] = useGitConnected();
 
     return (
         <Router>
             <div className="App">
-                <Route exact path="/">
+            <Route exact path="/">
                     <DrawerNav 
-                        contentComponent={
-                            <About 
-                                gitConnected={gitConnected}
-                                isLoading={isLoading}
-                            />
-                        } 
+                            gitConnected={gitConnected} 
+                            isLoading={isLoading}
+                            contentComponent={
+                                <About 
+                                    gitConnected={gitConnected}
+                                    isLoading={isLoading}
+                                />
+                            } 
                     />
                 </Route>
                 <Route exact path="/projects">
