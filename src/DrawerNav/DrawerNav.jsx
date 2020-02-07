@@ -11,69 +11,71 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import useDrawerStyles from './useDrawerStyles';
-import {useTheme} from '@material-ui/core/styles';
-
 
 
 function DrawerNav(props) {
   const { container } = props;
   const classes = useDrawerStyles();
-  const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+
+  const DrawerAppBar = () => (
+    <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+            <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                className={classes.menuButton}
+            >
+                <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap>
+                Alexander Steele
+            </Typography>
+        </Toolbar>
+    </AppBar>
+  )
+
+    const MobileDrawer = () => (
+        <Hidden smUp implementation="css">
+            <Drawer
+                container={container}
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                classes={{paper: classes.drawerPaper}}
+                ModalProps={{keepMounted: true,}}
+            >
+                <DrawerList />
+            </Drawer>
+        </Hidden>
+    )
+
+  const FixedDrawer = () => (
+    <Hidden xsDown implementation="css">
+        <Drawer
+            classes={{paper: classes.drawerPaper}}
+            variant="permanent"
+            open
+        >
+            <DrawerList />
+        </Drawer>
+    </Hidden>
+  )
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Responsive drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <DrawerAppBar />
 
       <nav className={classes.drawer}>
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
-          <Drawer
-            container={container}
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{keepMounted: true,}}
-          >
-            <DrawerList />
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant="permanent"
-            open
-          >
-            <DrawerList />
-          </Drawer>
-        </Hidden>
+        <MobileDrawer />
+        <FixedDrawer />
       </nav>
+
       <main className={classes.content}>
         <div className={classes.toolbar} />
             {props.contentComponent }
