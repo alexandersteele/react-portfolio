@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useProjectsStyles = makeStyles({
+const useCardStyles = makeStyles({
     root: {
       minWidth: 275,
     },
@@ -17,4 +17,4 @@ const useProjectsStyles = makeStyles({
     },
 });
 
-export default useProjectsStyles;
+export default useCardStyles;
