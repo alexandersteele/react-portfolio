@@ -11,14 +11,14 @@ const About = ({isLoading, gitConnected}) => {
         return (
             <div>
                 {
-                    work.map(({company, position, location, startDate, endDate}, key) => {
+                    work.map(({company, position, summary, location, startDate, endDate}, key) => {
                     return (
                         
                         <div key={key}>
                             <Card className={classes.root} >
                                 <CardContent>
-                                    <b>{company}</b>
-                                    <p>{position}</p>
+                                    <b>{company} - {position}</b>
+                                    <p>{summary}</p>
                                     <p>{location}</p>
                                     <p>{`${startDate} ― ${endDate}`}</p>
                                 </CardContent>

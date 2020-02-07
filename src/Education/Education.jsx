@@ -16,7 +16,8 @@ const Education = ({isLoading, gitConnected}) => {
                         <div key={key}>
                             <Card className={classes.root} >
                                 <CardContent>
-                                    <b>{`${institution} - ${area} (${studyType})`}</b>
+                                    <p><b>{`${institution} - ${area}`}</b></p>
+                                    <b>{studyType}</b>
                                     <p>{gpa}</p>
                                     <p>{`${startDate} ― ${endDate}`}</p>
                                 </CardContent>
