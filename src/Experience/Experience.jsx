@@ -3,6 +3,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { useCardStyles } from '../hooks';
+import padDate from '../utils/padDate'
 
 const About = ({isLoading, gitConnected}) => {
     const classes = useCardStyles();
@@ -11,9 +12,11 @@ const About = ({isLoading, gitConnected}) => {
         return (
             <div>
                 {
-                    work.map(({company, position, summary, location, startDate, endDate}, key) => {
-                        if (endDate === "") {endDate = "Present"}
-                        console.log(endDate)
+                    work.map(({company, position, summary, location, start, end}, key) => {
+                        let endDate =''
+                        let startDate = `${padDate(start.month)}/${start.year}`
+                        typeof end.year === 'undefined' ? endDate = 'Present' : endDate = `${padDate(end.month)}/${end.year}`
+                        
                         return (
                         
                         <div key={key}>
@@ -22,7 +25,7 @@ const About = ({isLoading, gitConnected}) => {
                                     <b>{company} - {position}</b>
                                     <p>{summary}</p>
                                     <p>{location}</p>
-                                    <p>{`${startDate} ― ${endDate}`}</p>
+                                    <p>{`${startDate} - ${endDate}`}</p>
                                 </CardContent>
                             </Card>
                             <br />
