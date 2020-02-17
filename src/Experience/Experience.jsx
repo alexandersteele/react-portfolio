@@ -12,7 +12,9 @@ const About = ({isLoading, gitConnected}) => {
             <div>
                 {
                     work.map(({company, position, summary, location, startDate, endDate}, key) => {
-                    return (
+                        if (endDate === "") {endDate = "Present"}
+                        console.log(endDate)
+                        return (
                         
                         <div key={key}>
                             <Card className={classes.root} >
