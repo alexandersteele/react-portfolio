@@ -66,6 +66,19 @@ const DrawerList = () => {
             </ListItem>
             ))}
         </List>
+        <Divider />
+        <List>
+            {['Blog'].map((text, index) => (
+            <ListItem button key={text} onClick={() => handleItemClick(text)}>
+                <ListItemIcon>
+                    <div>
+                        {index === 0 && <WorkIcon />}
+                    </div>  
+                </ListItemIcon>
+                <ListItemText primary={text} />
+            </ListItem>
+            ))}
+        </List>
         </div>
     )
 };
