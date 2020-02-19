@@ -11,7 +11,8 @@ import useDrawerStyles from './useDrawerStyles';
 import Divider from '@material-ui/core/Divider';
 import FolderIcon from '@material-ui/icons/Folder';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import WorkIcon from '@material-ui/icons/Work'
+import WorkIcon from '@material-ui/icons/Work';
+import ChatIcon from '@material-ui/icons/Chat';
 
     
 
@@ -72,7 +73,7 @@ const DrawerList = () => {
             <ListItem button key={text} onClick={() => handleItemClick(text)}>
                 <ListItemIcon>
                     <div>
-                        {index === 0 && <WorkIcon />}
+                        {index === 0 && <ChatIcon />}
                     </div>  
                 </ListItemIcon>
                 <ListItemText primary={text} />
