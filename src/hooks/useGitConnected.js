@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import {useRef} from 'react';
 
 const useGitConnected = () => {
     const [gitConnected, setGitConnected] = useState('');
     const [isLoading, setIsloading] = useState(true);
+    const isCancelled = useRef(false);
   
     useEffect(() => {
       const fetchData = async () => {
@@ -14,7 +16,8 @@ const useGitConnected = () => {
           .finally(() => setIsloading(false))
       }
   
-    fetchData();
+      fetchData();
+      return() => isCancelled.current = true;
     }, [])
   
     return [gitConnected, isLoading];

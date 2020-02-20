@@ -9,7 +9,7 @@ import padDate from '../utils/padDate'
 const Awards = ({isLoading, gitConnected}) => {
     const classes = useCardStyles();
 
-    const renderGitConnected = ({awards}) => awards.map(({title, awarder, summary, fullDate}, key) => (
+    const renderGitConnected = ({awards})  => awards.map(({title, awarder, summary, fullDate}, key) => (
         <div key={key}>
             <Card className={classes.root} >
                 <CardContent>
