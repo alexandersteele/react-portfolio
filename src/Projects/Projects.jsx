@@ -11,31 +11,29 @@ import { useCardStyles } from '../hooks';
 const Projects = ({isLoading, gitConnected}) => {
     const classes = useCardStyles();
 
-    const renderGitConnected = ({projects}) => (
-        <div>
-            { projects.map(({name, summary, githubUrl}, key) => (
-                <div key={key}>
-                    <Card className={classes.root} >
-                        <CardContent>
-                            <Typography className={classes.title} color="textSecondary" gutterBottom>
-                                GitHub
-                            </Typography>
-                            <Typography variant="h5" component="h2">
-                                {name}
-                            </Typography>
-                            <Typography variant="body1" component="p">
-                                {summary}
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small" href={githubUrl}>GitHub Link</Button>
-                        </CardActions>
-                    </Card>
-                    <br />
-                </div>
-            ))}
+    const renderGitConnected = ({projects}) => projects.map(({name, summary, githubUrl}, key) => (
+        <div key={key}>
+            <Card className={classes.root} >
+                <CardContent>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        GitHub
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                        {name}
+                    </Typography>
+                    <Typography variant="body1" component="p">
+                        {summary}
+                    </Typography>
+
+                </CardContent>
+                <CardActions>
+                    <Button size="small" href={githubUrl}>GitHub Link</Button>
+                </CardActions>
+            </Card>
+            <br />
         </div>
-    )
+    ))
+    
     return isLoading ? <LoadingSpinner /> : renderGitConnected(gitConnected);
 };
 export default Projects;

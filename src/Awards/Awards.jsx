@@ -9,45 +9,28 @@ import padDate from '../utils/padDate'
 const Awards = ({isLoading, gitConnected}) => {
     const classes = useCardStyles();
 
-    const renderGitConnected = ({awards}) => {
-        return (
-            <div>
-                {
-                    awards.map(({title, awarder, summary, fullDate}, key) => {
-                        console.log(awards)
-                    return (
-                        <div key={key}>
-                            <Card className={classes.root} >
-                                <CardContent>
-                                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                                        {awarder}
-                                    </Typography>
-                                    <Typography variant="h5" component="h2">
-                                        {title}
-                                    </Typography>
-                                    <Typography variant="body1" component="p">
-                                        {summary}
-                                    </Typography>
-                                    <Typography variant="body1" component="p">
-                                        {`${padDate(fullDate.month)}/${fullDate.year}`}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                            <br />
-                        </div>
-                    );
-                })
-        }
-            </div>
-        );
-        
-    }
-
-    return (
-        <div>
-            {isLoading ? <LoadingSpinner /> :
-                renderGitConnected(gitConnected)}
+    const renderGitConnected = ({awards}) => awards.map(({title, awarder, summary, fullDate}, key) => (
+        <div key={key}>
+            <Card className={classes.root} >
+                <CardContent>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        {awarder}
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                        {title}
+                    </Typography>
+                    <Typography variant="body1" component="p">
+                        {summary}
+                    </Typography>
+                    <Typography variant="body1" component="p">
+                        {`${padDate(fullDate.month)}/${fullDate.year}`}
+                    </Typography>
+                </CardContent>
+            </Card>
+            <br />
         </div>
-    );
+    ));       
+
+    return isLoading ? <LoadingSpinner /> : renderGitConnected(gitConnected);
 };
 export default Awards;

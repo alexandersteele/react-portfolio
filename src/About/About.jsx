@@ -7,8 +7,7 @@ import useAboutStyles from './useAboutStyles';
 const About = ({isLoading, gitConnected}) => {
     const classes = useAboutStyles();
 
-    const renderGitConnected = ({basics, skills}) => {
-        return (
+    const renderGitConnected = ({basics, skills}) => (
             <div>
                 <img src={basics.picture} alt="profile" className={classes.image}/>
                 <Typography variant="h4" component="h1">
@@ -21,27 +20,27 @@ const About = ({isLoading, gitConnected}) => {
                     {basics.summary}
                 </Typography>
                 <Typography variant="h6" component="h2">
-                    
                 </Typography>
+
                 <br />
+
                 <Typography variant="h4" component="h1">
                     Skills
                 </Typography>
                 <div className={classes.root}>
                     { skills.map(({name}, k) => <Chip label={name} key={k} />) }
                 </div>
+
                 <br />
+
                 <Typography variant="h4" component="h1">
                     Profiles
                 </Typography>
                 <Typography variant="body1" component="p">
                     <a href={basics.website}>Website</a> | <a href={basics.profiles[1].url}>GitHub</a> | <a href={basics.profiles[2].url}>Twitter</a> | <a href={basics.profiles[3].url}>LinkedIn</a>   
                 </Typography>
-                
             </div>
-        );
-        
-    }
+    )
 
     return isLoading ? <LoadingSpinner /> : renderGitConnected(gitConnected);
 };

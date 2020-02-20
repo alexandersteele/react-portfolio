@@ -15,8 +15,6 @@ const App = () => {
 
     const [blog, isBloggerLoading] = useBlogger();
 
-    console.log(blog)
-
     return (
         <Router>
             <div className="App">
