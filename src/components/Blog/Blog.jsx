@@ -3,7 +3,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { useCardStyles } from '../hooks';
+import { useCardStyles } from '../../hooks';
 import { format } from 'date-fns';
 
 const Blog = ({isLoading, blog}) => {

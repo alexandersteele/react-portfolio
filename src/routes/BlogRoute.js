@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route} from 'react-router-dom'
-import {DrawerNav} from '../DrawerNav';
+import {DrawerNav} from '../components/DrawerNav';
 import {useBlogger, useGitConnected} from '../hooks'
 
 const BlogRoute = ({component, pathname}) => {

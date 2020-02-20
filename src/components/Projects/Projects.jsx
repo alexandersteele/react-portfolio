@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { useCardStyles } from '../hooks';
+import { useCardStyles } from '../../hooks';
 
 
 const Projects = ({isLoading, gitConnected}) => {

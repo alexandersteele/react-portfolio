@@ -1,11 +1,11 @@
 import React from 'react';
-import {About} from './About';
-import {Projects} from './Projects';
+import {About} from './components/About';
+import {Projects} from './components/Projects';
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Experience } from './Experience';
-import {Education} from './Education';
-import { Awards } from './Awards';
-import { Blog } from './Blog';
+import { Experience } from './components/Experience';
+import {Education} from './components/Education';
+import { Awards } from './components/Awards';
+import { Blog } from './components/Blog';
 import { ProfileRoute, BlogRoute } from './routes';
 
 const App = () => (
@@ -20,6 +20,5 @@ const App = () => (
             </div>
         </Router>
 );
-
 
 export default App;
