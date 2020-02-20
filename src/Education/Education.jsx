@@ -1,6 +1,7 @@
 import React from 'react';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import { useCardStyles } from '../hooks';
 import padDate from '../utils/padDate'
@@ -20,10 +21,18 @@ const Education = ({isLoading, gitConnected}) => {
                         <div key={key}>
                             <Card className={classes.root} >
                                 <CardContent>
-                                    <p><b>{`${institution} - ${area}`}</b></p>
-                                    <b>{studyType}</b>
-                                    <p>{gpa}</p>
-                                    <p>{`${startDate} ― ${endDate}`}</p>
+                                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                                        {`${institution}`}
+                                    </Typography>
+                                    <Typography variant="h5" component="h2">
+                                        {`${studyType} ${area}`}
+                                    </Typography>
+                                    <Typography variant="h6"  component="h2">
+                                        {gpa}
+                                    </Typography>
+                                    <Typography variant="body1" component="p">
+                                        {`${startDate} ― ${endDate}`}
+                                    </Typography>
                                 </CardContent>
                             </Card>
                             <br />

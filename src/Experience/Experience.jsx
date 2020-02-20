@@ -1,6 +1,7 @@
 import React from 'react';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import { useCardStyles } from '../hooks';
 import padDate from '../utils/padDate'
@@ -22,10 +23,27 @@ const About = ({isLoading, gitConnected}) => {
                         <div key={key}>
                             <Card className={classes.root} >
                                 <CardContent>
-                                    <b>{company} - {position}</b>
-                                    <p>{summary}</p>
-                                    <p>{location}</p>
-                                    <p>{`${startDate} - ${endDate}`}</p>
+                                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                                        {company}
+                                    </Typography>
+                                    <Typography variant="h5" component="h2">
+                                        {position}
+                                    </Typography>
+                                    <Typography variant="body1" component="p">
+                                        {summary}
+                                    </Typography>
+                                    <Typography variant="body2" component="p">
+                                        {`${startDate} ― ${endDate}`}
+                                    </Typography>
+                                    <Typography variant="h6" component="h2">
+                                        {location}
+                                    </Typography>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </CardContent>
                             </Card>
                             <br />

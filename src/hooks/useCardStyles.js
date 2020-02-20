@@ -7,6 +7,9 @@ const useCardStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
+    title: {
+      fontSize: 14,
+    },
 });
 
 export default useCardStyles;
