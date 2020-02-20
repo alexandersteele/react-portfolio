@@ -5,6 +5,10 @@ const useGitConnected = () => {
     const [gitConnected, setGitConnected] = useState('');
     const [isLoading, setIsloading] = useState(true);
     const isCancelled = useRef(false);
+
+    if (typeof process.env.REACT_APP_CONNECTED_URL === 'undefined') {
+      console.error("Invalid GitConnect URL")
+    }
   
     useEffect(() => {
       const fetchData = async () => {
@@ -17,7 +21,7 @@ const useGitConnected = () => {
       }
   
       fetchData();
-      return() => isCancelled.current = true;
+      return() => {isCancelled.current = true};
     }, [])
   
     return [gitConnected, isLoading];

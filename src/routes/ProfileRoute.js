@@ -7,7 +7,7 @@ const ProfileRoute = ({component, pathname}) => {
     const [gitConnected, isGitLoading] = useGitConnected();
     let ProfileComponent;
 
-    if (typeof gitConnected.statusCode !== 'undefined'){
+    if (typeof gitConnected.statusCode !== 'undefined' ){
         ProfileComponent = () => <p>{gitConnected.error}</p>
     }
     else {
