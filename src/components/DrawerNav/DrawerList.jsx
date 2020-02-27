@@ -55,7 +55,8 @@ const DrawerList = () => {
         <Divider />
         <List>
             {['Experience', 'Education', 'Awards'].map((text, index) => (
-            <ListItem button key={text} onClick={() => handleItemClick(text)}>
+            <ListItem button key={text} onClick={() => handleItemClick(text)}
+                selected={handleItemActive(text)}>
                 <ListItemIcon>
                     <div>
                         {index === 0 && <WorkIcon />}
@@ -70,7 +71,8 @@ const DrawerList = () => {
         <Divider />
         <List>
             {['Blog'].map((text, index) => (
-            <ListItem button key={text} onClick={() => handleItemClick(text)}>
+            <ListItem button key={text} onClick={() => handleItemClick(text)}
+                selected={handleItemActive(text)}>
                 <ListItemIcon>
                     <div>
                         {index === 0 && <ChatIcon />}
