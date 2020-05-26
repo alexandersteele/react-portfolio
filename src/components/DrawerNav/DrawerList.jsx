@@ -7,9 +7,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import PersonIcon from '@material-ui/icons/Person';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import useDrawerStyles from './useDrawerStyles';
 import Divider from '@material-ui/core/Divider';
-import FolderIcon from '@material-ui/icons/Folder';
+import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import WorkIcon from '@material-ui/icons/Work';
 import ChatIcon from '@material-ui/icons/Chat';
@@ -45,8 +46,8 @@ const DrawerList = () => {
                 <ListItemIcon>
                     <div>
                         {index === 0 && <PersonIcon />}
-                        {index === 1 && <FolderIcon />}
-                        {index === 2 && <FolderIcon />}
+                        {index === 1 && <GitHubIcon />}
+                        {index === 2 && <PlayCircleFilledIcon />}
                     </div>
                 </ListItemIcon>
                 <ListItemText primary={text} />
