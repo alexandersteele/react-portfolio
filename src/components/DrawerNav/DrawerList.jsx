@@ -38,7 +38,7 @@ const DrawerList = () => {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-            {['About','Projects'].map((text, index) => (
+            {['About','Projects', 'Demos'].map((text, index) => (
                 
             <ListItem button key={text}  onClick={() => handleItemClick(text)}
                 selected={handleItemActive(text)}>
@@ -46,6 +46,7 @@ const DrawerList = () => {
                     <div>
                         {index === 0 && <PersonIcon />}
                         {index === 1 && <FolderIcon />}
+                        {index === 2 && <FolderIcon />}
                     </div>
                 </ListItemIcon>
                 <ListItemText primary={text} />
