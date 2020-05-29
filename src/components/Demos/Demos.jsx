@@ -1,5 +1,4 @@
 import React from 'react';
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
@@ -22,7 +21,7 @@ const Demos = () => {
                     <Card className={classes.paper} boxShadow={2}>
                         <CardContent>
                             <Typography variant="h5" component="h2">
-                                Visualising Real Data Dashboard
+                                Visualising Real Data Dashboard (WIP)
                             </Typography>
                             <Typography variant="body1" component="p">
                                 An example dashboard that maps real data entries to graphs using React-Vis and Cube.js.
@@ -30,8 +29,8 @@ const Demos = () => {
 
                         </CardContent>
                         <CardActions>
-                            <Button size="small" href="/demos/DemoDashboard">Check it out</Button>
-                            <Button size="small" href="/demos/dds">Blog</Button>
+                            <Button size="small" href="#">Check it out</Button>
+                            <Button size="small" href="#">Blog</Button>
                         </CardActions>
                     </Card>
                 </Box>
@@ -51,7 +50,7 @@ const Demos = () => {
                         </CardContent>
                         <CardActions>
                             <Button size="small" href="/demos/DemoDashboard">Check it out</Button>
-                            <Button size="small" href="/demos/dds">Blog</Button>
+                            <Button size="small" href="#">Blog</Button>
                         </CardActions>
                     </Card>
                 </Box>

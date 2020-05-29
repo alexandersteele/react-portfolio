@@ -6,7 +6,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import PersonIcon from '@material-ui/icons/Person';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import useDrawerStyles from './useDrawerStyles';
 import Divider from '@material-ui/core/Divider';
@@ -45,7 +45,7 @@ const DrawerList = () => {
                 selected={handleItemActive(text)}>
                 <ListItemIcon>
                     <div>
-                        {index === 0 && <PersonIcon />}
+                        {index === 0 && <AccountCircleIcon />}
                         {index === 1 && <GitHubIcon />}
                         {index === 2 && <PlayCircleFilledIcon />}
                     </div>

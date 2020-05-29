@@ -8,7 +8,7 @@ import {Education} from './components/Education';
 import { Awards } from './components/Awards';
 import { Blog } from './components/Blog';
 import { ProfileRoute, BlogRoute, GenericRoute } from './routes';
-import { DemoDashboard } from './components/DemoDashboard';
+import { DemoDashboard } from './components/Demos/DemoDashboard';
 
 const App = () => (
         <Router>
