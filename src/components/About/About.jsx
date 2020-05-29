@@ -51,7 +51,7 @@ const About = ({isLoading, gitConnected}) => {
                     Profiles
                 </Typography>
                 <Typography variant="body1" component="p">
-                    <a href={basics.website}>Website</a> | <a href={basics.profiles[1].url}>GitHub</a> | <a href={basics.profiles[2].url}>Twitter</a> | <a href={basics.profiles[3].url}>LinkedIn</a>   
+                    <a href={basics.website}>Website</a> | <a href={basics.profiles[1].url}>GitHub</a> | <a href={basics.profiles[2].url}>LinkedIn</a> | <a href={basics.profiles[3].url}>Twitter</a>   
                 </Typography>
             </Grid>
                 
