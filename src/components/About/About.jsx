@@ -9,15 +9,11 @@ import useAboutStyles from './useAboutStyles';
 const About = ({isLoading, gitConnected}) => {
     const classes = useAboutStyles();
 
+    console.log("v2 baby")
+
     const renderGitConnected = ({basics, skills}) => (
 
-
-
-
         <Grid container className={classes.root} spacing={2}>
-
-
-
                 <Grid item xs={3} md={12}>
                     <img src={basics.picture} alt="profile" className={classes.image}/>
                 </Grid>
@@ -53,12 +49,9 @@ const About = ({isLoading, gitConnected}) => {
                 <Typography variant="body1" component="p">
                     <a href={basics.website}>Website</a> | <a href={basics.profiles[1].url}>GitHub</a> | <a href={basics.profiles[2].url}>LinkedIn</a> | <a href={basics.profiles[3].url}>Twitter</a>   
                 </Typography>
-            </Grid>
-                
+            </Grid>         
         </Grid>
     
-
-  
     )
 
     return isLoading ? <LoadingSpinner /> : renderGitConnected(gitConnected);

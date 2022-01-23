@@ -20,7 +20,6 @@ const App = () => (
                 <ProfileRoute component={Education} pathname="/Education"/>
                 <ProfileRoute component={Awards} pathname="/Awards"/>
                 <BlogRoute component={Blog} pathname="/Blog"/>
-
                 <GenericRoute component={DemoDashboard} pathname="/demos/DemoDashboard" />
             </div>
         </Router>
