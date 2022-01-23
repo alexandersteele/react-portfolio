@@ -9,7 +9,7 @@ import useAboutStyles from './useAboutStyles';
 const About = ({isLoading, gitConnected}) => {
     const classes = useAboutStyles();
 
-    console.log("v2 baby")
+    console.log("v2 baby !!")
 
     const renderGitConnected = ({basics, skills}) => (
 
